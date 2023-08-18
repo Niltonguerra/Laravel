@@ -1,0 +1,78 @@
+comandos do prompt.
+
+
+cria um projeto laravel como o nome: 'projetoEstudos':
+composer create-project --prefer-dist laravel/laravel projetoEstudos
+
+instala o bootstrap:
+npm i bootstrap@5.3.0
+
+Cria um controller de nome: 'EventController':
+php artisan make:controller EventController
+
+liga o laravel:
+php artisan serve
+
+
+para apontar o banco para o laravel é necessario ir no arquivo .env e
+configura-lo, no xampp é só mudar o nome no database.
+
+conecta o php com o mysql:
+php artisan migrate
+
+cria uma migrate de criação(uma tabela no mysql):
+php artisan make:migration create_products_table
+
+cria uma migration de edição:
+php artisan make:migration add_image_to_events_table
+
+executa a migrate:
+php artisan migrate
+
+mostra os status das migrates:
+php artisan migrate:status
+
+remove todas as tabelas e inseri de novo:
+php artisan migrate:fresh   ---URGENTE!!! esse comando apaga todos os dados da tabela!
+
+volta uma atualização, volta um comando:
+php artisan migrate:rollback     ---URGENTE!!! esse comando apaga todos os dados da tabela!
+
+Apaga todas as ações das migrates:
+php artisan migrate:reset      ---URGENTE!!! esse comando apaga todos os dados da tabela!
+
+faz o roolback e o migrate:
+php artisan migrate:refresh      ---URGENTE!!! esse comando apaga todos os dados da tabela!
+
+
+cria um model(model são usados para fazer os comandos em php, exemplo: select,insert,delete e etc)
+php artisan make:model Event
+
+
+
+serviço de autenticação com o laravel; comandos para instalar:
+
+//caso esteja não esteja encontrando o git:
+apt-get install zip
+composer install --prefer-dist
+
+//instala o jetstream:
+composer require laravel/jetstream
+
+// insta-la as dependencias do jetstream, nesse caso iremos utilizar o livewire
+//,TODAVIA,
+//para integrar à frameworks reativos(exemplo: view js, react) o indicado é utilizar o inertia
+php artisan jetstream:install livewire
+
+//para enviar a tabela para o sql:
+php artisan migrate
+
+//verifica se enviou corretamente:
+php artisan migrate:status
+
+//instala o npm
+npm install
+
+//executa e mantém executando o jetstream livewire:
+npm run dev
+
